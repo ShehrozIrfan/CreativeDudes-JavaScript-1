@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+    <style>
+    
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width:80%;
+            margin:auto;
+            border:3px solid black;
+            min-height: 100vh;
+            border-radius: 15px;
+            
+        }
+        .image{
+            width:45px;
+            padding:15px;
+        }
+        .box{
+            float:left;
+        }
+        #page{
+            width:80%;
+            border:3px solid black;
+            border-radius: 12px;
+            padding:15px;
+        }
+        #inside{
+            border:3px solid black;
+            min-height:70px;
+            border-radius: 12px;
+            margin:auto;
+        }
+        #box-2,#box-3{
+            display:none;
+        }
+        button{
+            background:transparent;
+            border:none;
+            outline:none;
+        }
+        
+        @media(max-width:1200px){
+            #page{
+                width:75%;
+            }
+        }
+        @media(max-width:1000px){
+            #page{
+                width:70%;
+            }
+        }
+        @media(max-width:800px){
+            #page{
+                width:67%;
+            }
+        }
+         @media(max-width:568px){
+            #page{
+                width:50%;
+                
+            }
+             .image{
+            width:35px;
+            padding:5px;
+        }
+             #page{
+            width:55%;
+            border:3px solid black;
+            border-radius: 12px;
+            padding:5px;
+        }
+             #inside{
+            border:3px solid black;
+            min-height:50px;
+            border-radius: 12px;
+            margin:auto;
+        }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+    
+  
+        <!-- first div -->
+       
+        <div id="box-1">
+        
+             <div id="inside">
+       
+             <div class="box">
+    
+             <button type="button"><img src= "left.png" alt="left-arrow" class="image" id="btn-left"  onclick= "changeLeft()"></button>
+        
+    
+        </div>
+        
+        <div class="box" id="page">
+        
+           <h1 align="center">Page 1</h1>
+        
+        
+        </div>
+        
+        <div class="box">
+        
+            <button type="button"><img src= "right.png" alt="right-arrow" class="image" id="btn-right" onclick = "changeRight()"></button>
+        
+        </div>
+            
+        </div>
+            
+             <div>
+                
+                <h1>This is dummy content for page 1</h1>
+            
+            
+            </div>
+        
+        </div><!-- first div ends -->
+        
+        <!-- second div -->
+        <div id="box-2">
+        
+            <div id="inside">
+       
+             <div class="box">
+    
+            <button type="button"><img src= "left.png" alt="left-arrow" class="image" onclick= "changeLeft()"></button>
+        
+    
+        </div>
+        
+        <div class="box" id="page">
+        
+           <h1 align="center">Page 2</h1>
+        
+        </div>
+        
+        <div class="box">
+        
+            <button type="button"><img src= "right.png" alt="right-arrow" class="image" onclick = "changeRight()"></button>
+        
+        </div>
+                
+        </div>
+            <div>
+                
+                 <h1>This is dummy content for page 2</h1>
+                 <h2>And Page 2 is good</h2>
+            
+            
+            </div>
+        
+        </div><!-- second div ends -->
+        
+        
+        <!-- third div -->
+        <div id="box-3">
+        
+            <div id="inside">
+       
+             <div class="box">
+    
+            <button type="button"><img src= "left.png" alt="left-arrow" class="image"  onclick= "changeLeft()"></button>
+        
+    
+        </div>
+        
+        <div class="box" id="page">
+        
+           <h1 align="center">Page 3</h1>
+        
+        
+        </div>
+        
+        <div class="box">
+        
+            <button type="button"><img src= "right.png" alt="right-arrow" class="image" onclick = "changeRight()"></button>
+        
+        </div>
+            
+        </div>
+            
+             <div>
+                
+                <h1>This is dummy content for page 3</h1>
+                 <h2>And Page 3 is good</h2>
+                 <h3>Content is fine</h3>
+            
+            
+            </div>
+        
+        </div><!-- third div ends -->
+        
+    </div>
+    
+    
+    <script>
+    
+        var count = 0;
+        var ncount = 0;
+       
+            var div1 = document.getElementById("box-1");
+            var div2 = document.getElementById("box-2");
+            var div3 = document.getElementById("box-3");
+       
+        function changeRight(){
+  
+            count = count+1;
+ 
+            if(count == 0){
+            div1.style.display = 'block';
+            div2.style.display = 'none';
+            div3.style.display = 'none'; 
+            }
+            
+            if(count == 1){
+            div1.style.display = 'none';
+            div2.style.display = 'block';
+            div3.style.display = 'none'; 
+                     
+            }
+            
+            if(count == 2){
+            div1.style.display = 'none';
+            div2.style.display = 'none';
+            div3.style.display = 'block';
+            
+                count = -1;
+            }
+            
+    
+        }
+        
+        function changeLeft(){
+            
+            ncount = count;
+            
+            if(ncount == 1){
+                div1.style.display = 'block';
+            div2.style.display = 'none';
+            div3.style.display = 'none'; 
+                count --;
+            }
+            
+            if(ncount == -1){
+            div1.style.display = 'none';
+            div2.style.display = 'block';
+            div3.style.display = 'none';
+                count --;
+            }
+           
+            if(ncount == -2){
+                 div1.style.display = 'block';
+            div2.style.display = 'none';
+            div3.style.display = 'none'; 
+            }
+        }
+    
+    </script>
+    
+    
+</body>
+</html>
